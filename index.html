@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .container{
+                text-align: center;
+                margin-top: 100px;
+            }
+            #zapremina{
+                color: grey;               
+            }
+            input{
+                padding: 5px;
+            }
+            button{
+                display: block;
+                margin: auto;
+                margin-top: 20px;
+                
+                border-radius: 5px;
+                padding: 10px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <p>Molim vas unesite visinu valjka: </p>
+            <input type="text" id="visina">
+            <p>Molim vas unesite poluprecnik osnove valjka: </p>
+            <input type="text" id="poluprecnik">
+            <p>Zapremina valjka iznosi: </p>
+            <input id = "zapremina" readonly value="Zapremina..">
+            <button onclick="RacunanjeZapremine()" >Izračunaj</button>
+        </div>
+
+
+
+        <script>
+            const pi = 3.14;
+            function RacunanjeZapremine(){
+                var visina = document.getElementById("visina").value;
+                var poluprecnik = document.getElementById("poluprecnik").value;                
+               document.getElementById("zapremina").value = Math.pow(parseInt(visina), 2) * pi * parseInt(poluprecnik);
+            }
+        </script>
+    </body>
+</html>
